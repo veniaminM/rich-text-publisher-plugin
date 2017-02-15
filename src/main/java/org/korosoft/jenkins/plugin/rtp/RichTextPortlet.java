@@ -67,7 +67,7 @@ public class RichTextPortlet extends DashboardPortlet {
 
     public String getRichText() {
         try {
-            TopLevelItem item = Jenkins.getInstance().getItem(jobName);
+            TopLevelItem item = Jenkins.getInstance().getItemByFullName(jobName);
             if (!(item instanceof AbstractProject)) {
                 return String.format(Messages.jobNotFound(), jobName);
             }
